@@ -24,9 +24,9 @@ export const MenuDrawer: FC<Props> = memo((props) => {
                         <Button w="100%" onClick={onClickDecks}>デッキ</Button>
                     </DrawerBody>
                     <DrawerFooter p={0}>
-                        
+
                         <Button color="red.500" w="100%" onClick={logoutUser}>ログアウト</Button>
-                        <Button color="red.500" w="100%" onClick={onClose}>閉じる</Button>
+                        <Button w="100%" onClick={onClose}>閉じる</Button>
                     </DrawerFooter>
                 </DrawerContent>
             </DrawerOverlay>

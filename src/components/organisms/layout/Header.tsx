@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react"
+import { Box, Flex, Heading, Link, ring, useDisclosure } from "@chakra-ui/react"
 import { FC, memo, useCallback } from "react"
 import { useNavigate } from "react-router-dom";
 
@@ -42,12 +42,14 @@ export const Header: FC = memo(() => {
                 </Heading>
             </Flex>
             
-            <Flex align="center" fontSize="sm" flexGrow={2} display={{ base: "none", md: "flex"}} >
+            <Flex align="center" fontSize="md" flexGrow={2} display={{ base: "none", md: "flex"}} >
                 <Box pr={4}>
                     <Link pr={6} onClick={onClickUserData}>ユーザー情報</Link>
                     <Link pr={6} onClick={onClickDecks}>デッキ</Link>
-                    <SecondaryButton  onClick={logoutUser}>ログアウト</SecondaryButton>
                 </Box>
+            </Flex>
+            <Flex align="right" display={{ base: "none", md: "flex" }}>
+                <SecondaryButton onClick={logoutUser}>ログアウト</SecondaryButton>
             </Flex>
             <MenuIconButton onOpen={onOpen} />
         </Flex>
