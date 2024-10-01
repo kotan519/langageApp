@@ -4,10 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 import { MenuIconButton } from "../../atoms/button/MenuIconButton";
 import { MenuDrawer } from "../../molecules/MenuDrawer";
+import { useLogout } from "../../../hooks/useLogout";
+import { SecondaryButton } from "../../atoms/button/SecondaryButton";
 
 
 export const Header: FC = memo(() => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const { logoutUser } = useLogout();
     const navigate = useNavigate();
 
     const onClickHome = useCallback(() => {
@@ -41,8 +44,9 @@ export const Header: FC = memo(() => {
             
             <Flex align="center" fontSize="sm" flexGrow={2} display={{ base: "none", md: "flex"}} >
                 <Box pr={4}>
-                    <Link onClick={onClickUserData}>ユーザー情報</Link>
-                    <Link onClick={onClickDecks}>デッキ</Link>
+                    <Link pr={6} onClick={onClickUserData}>ユーザー情報</Link>
+                    <Link pr={6} onClick={onClickDecks}>デッキ</Link>
+                    <SecondaryButton  onClick={logoutUser}>ログアウト</SecondaryButton>
                 </Box>
             </Flex>
             <MenuIconButton onOpen={onOpen} />
