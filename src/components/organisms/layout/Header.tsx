@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react"
 import { FC, memo, useCallback } from "react"
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { MenuIconButton } from "../../atoms/button/MenuIconButton";
 import { MenuDrawer } from "../../molecules/MenuDrawer";
@@ -8,11 +8,11 @@ import { MenuDrawer } from "../../molecules/MenuDrawer";
 
 export const Header: FC = memo(() => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const history = useHistory();
+    const navigate = useNavigate();
 
-    const onClickHome = useCallback(() => history.push("/home"), [history]);
-    const onClickUserData = useCallback(() => history.push("/home/userData"), [history]);
-    const onClickDecks = useCallback(() => history.push("/home/decks"), [history]);
+    const onClickHome = useCallback(() => navigate("/home"), [navigate]);
+    const onClickUserData = useCallback(() => navigate("/home/userData"), [navigate]);
+    const onClickDecks = useCallback(() => navigate("/home/decks"), [navigate]);
 
     return (
         <>

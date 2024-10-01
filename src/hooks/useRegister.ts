@@ -1,11 +1,11 @@
 import { createUserWithEmailAndPassword, UserCredential } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import { useMessage } from "./useMessage";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const useRegister = () => {
     const { showMessage } = useMessage();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const registerUser = async (email: string, password: string): Promise<UserCredential | void> => {
         try {
@@ -13,7 +13,7 @@ export const useRegister = () => {
             const user = userCredential.user;
             console.log("User registered:", user);
             showMessage({title: "登録成功！", status: "success"});
-            history.push("/home");
+            navigate("/home");
             return userCredential;
         } catch (error: any) {
             console.error("Error registering user:", error.message);

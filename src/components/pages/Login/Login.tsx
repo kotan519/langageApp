@@ -1,7 +1,7 @@
 import { Box, Divider, Flex, Heading, Input, Stack } from "@chakra-ui/react";
 import { ChangeEvent, FC, memo, useCallback, useState } from "react";
 import { PrimaryButton } from "../../atoms/button/PrimaryButton";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useLoginUser } from "../../../hooks/useLoginUser";
 import { useMessage } from "../../../hooks/useMessage";
 
@@ -12,12 +12,12 @@ export const Login: FC = memo(() => {
   const { showMessage } = useMessage();
   const { loginUser } = useLoginUser();
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
   const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
 
-  const onClickRegister = useCallback(() => history.push("/register"),[history]);
+  const onClickRegister = useCallback(() => navigate("/register"), [navigate]);
 
   const onLoginClick = async () => {
     if (email && password) {
@@ -30,7 +30,6 @@ export const Login: FC = memo(() => {
     }
   };
 
-  
   return (
     <Flex align="center" justify="center" height="100vh">
       <Box bg="white" w="sm" p={4} borderRadius="md" shadow="md">
@@ -60,5 +59,3 @@ export const Login: FC = memo(() => {
     </Flex>
   );
 });
-
-
