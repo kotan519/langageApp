@@ -1,22 +1,18 @@
-import { DeckList } from "../components/pages/deck/DeckList"
-import { Home } from "../components/pages/home/Home"
-import { UserData } from "../components/pages/home/UserData"
+import { DeckList } from "../components/pages/deck/DeckList";
+import { Home } from "../components/pages/home/Home";
+import { UserData } from "../components/pages/home/UserData";
 
-export const homeRoutes = 
-[
+export const routers = [
     {
-        path: "/",
-        exact: true,
-        children: <Home />
+        path: "/home", 
+        element: <Home />
     },
     {
         path: "/userData",
-        exact: false,
-        children: <UserData />
+        element: <UserData />
     },
     {
-        path: "/decks",
-        exact: false,
-        children: <DeckList />
+        path: "/decks", 
+        element: <DeckList />
     },
 ];

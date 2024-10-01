@@ -10,9 +10,18 @@ export const Header: FC = memo(() => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const navigate = useNavigate();
 
-    const onClickHome = useCallback(() => navigate("/home"), [navigate]);
-    const onClickUserData = useCallback(() => navigate("/home/userData"), [navigate]);
-    const onClickDecks = useCallback(() => navigate("/home/decks"), [navigate]);
+    const onClickHome = useCallback(() => {
+        navigate("/home");
+        onClose();
+    }, [navigate, onClose]);
+    const onClickUserData = useCallback(() => {
+        navigate("/userData")
+        onClose();
+    }, [navigate, onClose]);
+    const onClickDecks = useCallback(() => {
+        navigate("/decks")
+        onClose();
+    }, [navigate, onClose]);
 
     return (
         <>

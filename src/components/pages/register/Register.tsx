@@ -14,7 +14,7 @@ export const Register: FC = memo(() => {
   const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
   const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
 
-  const onClickLogin = useCallback(() => navigate("/login"), [navigate]);
+  const onClickLogin = useCallback(() => navigate("/"), [navigate]);
 
   const onRegisterClick = async () => {
     if (email && password) {
