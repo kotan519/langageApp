@@ -2,19 +2,19 @@ import { Box, Divider, Flex, Heading, Input, Stack } from "@chakra-ui/react";
 import { ChangeEvent, FC, memo, useCallback, useState } from "react";
 import { PrimaryButton } from "../../atoms/button/PrimaryButton";
 import { useRegister } from "../../../hooks/useRegister";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Register: FC = memo(() => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const { registerUser } = useRegister();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
   const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
 
-  const onClickLogin = useCallback(() => history.push("/login"), [history]);
+  const onClickLogin = useCallback(() => navigate("/"), [navigate]);
 
   const onRegisterClick = async () => {
     if (email && password) {
