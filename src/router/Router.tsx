@@ -3,6 +3,7 @@ import { routers } from "./HomeRoutes";
 import { Login } from "../components/pages/Login/Login";
 import { Register } from "../components/pages/register/Register";
 import { HeaderLayout } from "../components/organisms/layout/HeaderLayout";
+import { VocaCards } from "../components/pages/deck/VocaCards";
 
 export const Router = () => {
     return (
@@ -16,6 +17,7 @@ export const Router = () => {
                 element={<HeaderLayout>{route.element}</HeaderLayout>}
                 />
             ))}
+            <Route path="decks/:id" element={<HeaderLayout><VocaCards /></HeaderLayout>} />
         </Routes>
     );
 };

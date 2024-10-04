@@ -1,5 +1,5 @@
 export const Home = () => {
     return (
-        <p>Homeページ</p>
+        <h1>ホーム画面</h1>
     )
 }

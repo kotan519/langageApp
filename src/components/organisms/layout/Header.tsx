@@ -1,13 +1,16 @@
-import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react"
+import { Box, Flex, Heading, Link, ring, useDisclosure } from "@chakra-ui/react"
 import { FC, memo, useCallback } from "react"
 import { useNavigate } from "react-router-dom";
 
 import { MenuIconButton } from "../../atoms/button/MenuIconButton";
 import { MenuDrawer } from "../../molecules/MenuDrawer";
+import { useLogout } from "../../../hooks/useLogout";
+import { SecondaryButton } from "../../atoms/button/SecondaryButton";
 
 
 export const Header: FC = memo(() => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const { logoutUser } = useLogout();
     const navigate = useNavigate();
 
     const onClickHome = useCallback(() => {
@@ -39,11 +42,14 @@ export const Header: FC = memo(() => {
                 </Heading>
             </Flex>
             
-            <Flex align="center" fontSize="sm" flexGrow={2} display={{ base: "none", md: "flex"}} >
+            <Flex align="center" fontSize="md" flexGrow={2} display={{ base: "none", md: "flex"}} >
                 <Box pr={4}>
-                    <Link onClick={onClickUserData}>ユーザー情報</Link>
-                    <Link onClick={onClickDecks}>デッキ</Link>
+                    <Link pr={6} onClick={onClickUserData}>ユーザー情報</Link>
+                    <Link pr={6} onClick={onClickDecks}>デッキ</Link>
                 </Box>
+            </Flex>
+            <Flex align="right" display={{ base: "none", md: "flex" }}>
+                <SecondaryButton onClick={logoutUser}>ログアウト</SecondaryButton>
             </Flex>
             <MenuIconButton onOpen={onOpen} />
         </Flex>
