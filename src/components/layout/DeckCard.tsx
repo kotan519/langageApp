@@ -5,12 +5,13 @@ type Props = {
     title: string;
     introduction: string;
     percentage: number;
+    onClick: (id: number) => void;
 }
 
 export const DeckCard = (props: Props) => {
-    const { title, introduction, percentage } = props;
+    const { id, title, introduction, percentage, onClick } = props;
     return (
-        <Box w="260px" h="150px" bg="yellow.200" borderRadius="10px" shadow="md" p={4} _hover={{ cursor: "pointer", opacity: 0.8 }}>
+        <Box w="260px" h="150px" bg="yellow.200" borderRadius="10px" shadow="md" p={4} _hover={{ cursor: "pointer", opacity: 0.8 }} onClick={() => onClick(id)}>
             <Stack textAlign="center">
                 <Text fontSize="lg" fontWeight="bold">{title}</Text>
                 <Text fontSize="sm" color="black">{introduction}</Text>
