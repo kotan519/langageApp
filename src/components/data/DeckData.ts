@@ -5,9 +5,9 @@ export const DeckData = [
         introduction: "TOEICの頻出単語を1000単語収録しています。",
         percentage: 77,
         words: [
-            { id: "1", term: "apple", definition: "A fruit that is sweet and crunchy" },
-            { id: "2", term: "banana", definition: "A yellow fruit that monkeys love" },
-            { id: "3", term: "cat", definition: "A small, furry animal that purrs" }
+            { id: 12390, entry: "distinguish", meaning:"...を区別する / 〈物事が〉…の特徴である / 《通例canと共に》…をはっきり見る,聞く / 〈自分〉を目立たせる", ipa: "/dɪˈstɪŋɡwɪʃ/", example_sentence: "It is important to distinguish between right and wrong." },
+            { id: 26033, entry: "massive", meaning:"大きくて重い / 大規模な, 膨大な", ipa: "/mæsɪv/", example_sentence: "The elephant is massive." },
+            { id: 18560, entry: "greet", meaning:"〈他〉〈人など〉にあいさつする / 《喜び・親しみ・悪意などをもって》…を迎える《with ...》", ipa: "/ɡriːt/", example_sentence: "I greet my friends every morning." }
         ]
     },
     {
@@ -16,9 +16,9 @@ export const DeckData = [
         introduction: "IELTSの頻出単語を1500単語収録しています。",
         percentage: 21,
         words: [
-            { id: "1", term: "犬", definition: "A common domestic animal in Japan" },
-            { id: "2", term: "猫", definition: "A popular pet animal" },
-            { id: "3", term: "本", definition: "An object to read" }
+            { id: 12390, entry: "distinguish", meaning:"...を区別する / 〈物事が〉…の特徴である / 《通例canと共に》…をはっきり見る,聞く / 〈自分〉を目立たせる", ipa: "/dɪˈstɪŋɡwɪʃ/", example_sentence: "It is important to distinguish between right and wrong." },
+            { id: 26033, entry: "massive", meaning:"大きくて重い / 大規模な, 膨大な", ipa: "/mæsɪv/", example_sentence: "The elephant is massive." },
+            { id: 18560, entry: "greet", meaning:"〈他〉〈人など〉にあいさつする / 《喜び・親しみ・悪意などをもって》…を迎える《with ...》", ipa: "/ɡriːt/", example_sentence: "I greet my friends every morning." }
         ]
     },
     {
@@ -27,9 +27,9 @@ export const DeckData = [
         introduction: "TOEFLの頻出単語を800単語収録しています。",
         percentage: 7,
         words: [
-            { id: "1", term: "犬", definition: "A common domestic animal in Japan" },
-            { id: "2", term: "猫", definition: "A popular pet animal" },
-            { id: "3", term: "本", definition: "An object to read" }
+            { id: 12390, entry: "distinguish", meaning:"...を区別する / 〈物事が〉…の特徴である / 《通例canと共に》…をはっきり見る,聞く / 〈自分〉を目立たせる", ipa: "/dɪˈstɪŋɡwɪʃ/", example_sentence: "It is important to distinguish between right and wrong." },
+            { id: 26033, entry: "massive", meaning:"大きくて重い / 大規模な, 膨大な", ipa: "/mæsɪv/", example_sentence: "The elephant is massive." },
+            { id: 18560, entry: "greet", meaning:"〈他〉〈人など〉にあいさつする / 《喜び・親しみ・悪意などをもって》…を迎える《with ...》", ipa: "/ɡriːt/", example_sentence: "I greet my friends every morning." }
         ]
     },
     {
@@ -38,9 +38,9 @@ export const DeckData = [
         introduction: "Cambridge英検の頻出単語を4000単語収録しています。",
         percentage: 1,
         words: [
-            { id: "1", term: "犬", definition: "A common domestic animal in Japan" },
-            { id: "2", term: "猫", definition: "A popular pet animal" },
-            { id: "3", term: "本", definition: "An object to read" }
+            { id: 12390, entry: "distinguish", meaning:"...を区別する / 〈物事が〉…の特徴である / 《通例canと共に》…をはっきり見る,聞く / 〈自分〉を目立たせる", ipa: "/dɪˈstɪŋɡwɪʃ/", example_sentence: "It is important to distinguish between right and wrong." },
+            { id: 26033, entry: "massive", meaning:"大きくて重い / 大規模な, 膨大な", ipa: "/mæsɪv/", example_sentence: "The elephant is massive." },
+            { id: 18560, entry: "greet", meaning:"〈他〉〈人など〉にあいさつする / 《喜び・親しみ・悪意などをもって》…を迎える《with ...》", ipa: "/ɡriːt/", example_sentence: "I greet my friends every morning." }
         ]
     },
 ]
