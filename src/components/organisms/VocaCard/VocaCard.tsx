@@ -1,24 +1,29 @@
 import { useState } from "react";
 import { Vocabulary } from "../../types/voca/VocaType"
-import { Box, Button, Flex, Spacer, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { VocaCardButton } from "../../atoms/button/VocaCardButton";
+import { useUpdateRate } from "../../../hooks/useUpdateRate";
 
 type Props = {
+    deckId: number;
     voca: Vocabulary;
-    onClick: () => void;
+    onClickUnderstandingButton: () => void;
 }
 
 export const VocaCard = (props: Props) => {
-    const { voca, onClick } = props;
-    const [ isFlipped, setIsFripped ] = useState(true);
+    const { deckId, voca, onClickUnderstandingButton } = props;
+    const [ isFlipped, setIsFlipped ] = useState(true);
+    const { UpdateRate } = useUpdateRate();
 
     const onFlipButton = () => {
-        setIsFripped(!isFlipped);
+        setIsFlipped(!isFlipped);
     }
 
-    const onUnderstandingButton = () => {
-        setIsFripped(!isFlipped);
-        onClick();
+    const onUnderstandingButton = (rate: number, vocaId: number) => {
+        console.log(`Understanding rate updated: ${rate}% for word ID: ${vocaId} in deck ID: ${deckId}`); // デバッグ用
+        setIsFlipped(!isFlipped);
+        onClickUnderstandingButton();
+        UpdateRate(rate, vocaId, deckId);
     }
 
     return (
@@ -49,11 +54,11 @@ export const VocaCard = (props: Props) => {
                         <Text mt={3} fontSize="lg">{voca.meaning}</Text>
                         <Text mt={5} fontSize="lg">{voca.example_sentence}</Text>
                         <Flex mt={10}>
-                            <VocaCardButton onClick={onUnderstandingButton}>0%</VocaCardButton>
-                            <VocaCardButton onClick={onUnderstandingButton}>25%</VocaCardButton>
-                            <VocaCardButton onClick={onUnderstandingButton}>50%</VocaCardButton>
-                            <VocaCardButton onClick={onUnderstandingButton}>75%</VocaCardButton>
-                            <VocaCardButton onClick={onUnderstandingButton}>100%</VocaCardButton>
+                            <VocaCardButton onClick={() => onUnderstandingButton(0, voca.id)}>0%</VocaCardButton>
+                            <VocaCardButton onClick={() => onUnderstandingButton(25, voca.id)}>25%</VocaCardButton>
+                            <VocaCardButton onClick={() => onUnderstandingButton(50, voca.id)}>50%</VocaCardButton>
+                            <VocaCardButton onClick={() => onUnderstandingButton(75, voca.id)}>75%</VocaCardButton>
+                            <VocaCardButton onClick={() => onUnderstandingButton(100, voca.id)}>100%</VocaCardButton>
                         </Flex>
                     </Box>
                     

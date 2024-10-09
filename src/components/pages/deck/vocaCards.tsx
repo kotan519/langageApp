@@ -27,7 +27,7 @@ export const VocaCards = () => {
                 
                 <Box>
                     <Text fontSize="3xl" fontWeight="bold" p={8} align="center">{deck.title}</Text>
-                    <VocaCard voca={deck.words[currentWord]} onClick={onClickUnderstandingButton}/>     
+                    <VocaCard deckId={deck.deckId} voca={deck.words[currentWord]} onClickUnderstandingButton={onClickUnderstandingButton}/>     
                 </Box>
                 
             </Center>
