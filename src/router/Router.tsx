@@ -3,7 +3,7 @@ import { routers } from "./HomeRoutes";
 import { Login } from "../components/pages/Login/Login";
 import { Register } from "../components/pages/register/Register";
 import { HeaderLayout } from "../components/organisms/layout/HeaderLayout";
-import { VocaCards } from "../components/pages/deck/VocaCards";
+import { VocaCards } from "../components/pages/deck/VocaCardList";
 
 export const Router = () => {
     return (
