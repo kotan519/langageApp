@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DeckData } from "../components/data/DeckData";
 
 export const useUpdateRate = () => {
-    const [_, setDeck] = useState(DeckData);
+    const [ ,setDeck] = useState(DeckData);
 
     const UpdateRate = (rate: number, id: number, deckId: number) => {
         console.log(rate, id, deckId);
